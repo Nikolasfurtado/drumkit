@@ -1,6 +1,7 @@
 var drum = document.querySelectorAll(".drum");
-
 let keyPressed;
+
+
 addEventListener("keydown", (e) => {
     keyPressed = (e.key);
 
@@ -48,14 +49,12 @@ for (let i = 0; i < drum.length; i++) {
         var sd = new Audio('sounds/tom-' + (i + 1) + '.mp3');
         sd.play();
 
-        drum[i].toggleAttribute("style", "color:white");
 
-
-
-
+        setTimeout(() => {
+            drum[i].classList.remove("pressed");
+        }, 200);
+        drum[i].classList.add("pressed");
     });
-
-
 
 
 
